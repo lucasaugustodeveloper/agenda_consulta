@@ -1,11 +1,10 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const path = require('path')
 
 module.exports = {
   entry: './src/index.jsx',
   output: {
-    path: path.join(__dirname, '/public'),
+    path: __dirname + '/public',
     filename: './app.js'
   },
   devServer: {
@@ -13,13 +12,13 @@ module.exports = {
     contentBase: './public'
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx'],
     alias: {
-      modules: path.join(__dirname, '/node_modules')
+      modules: __dirname + '/node_modules'
     }
   },
   plugins: [
-    new ExtractTextPlugin('assets/css/app.css')
+    new ExtractTextPlugin('app.css')
   ],
   module: {
     loaders: [{
