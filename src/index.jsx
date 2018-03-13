@@ -1,6 +1,7 @@
+import './assets/css/general.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Home from './home/home'
+import App from './main/app'
 
-ReactDOM.render(<Home />, document.querySelector('#app'))
+ReactDOM.render(<App />, document.querySelector('#app'))
