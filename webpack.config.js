@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const GhPagesWebpackPlugin = require('gh-pages-webpack-plugin')
 
 module.exports = {
   entry: './src/index.jsx',
@@ -18,7 +19,17 @@ module.exports = {
     }
   },
   plugins: [
-    new ExtractTextPlugin('app.css')
+    new ExtractTextPlugin('app.css'),
+    new GhPagesWebpackPlugin({
+      path: './public',
+      options: {
+        message: 'Update APP',
+        user: {
+          name: 'laugustofrontend',
+          email: 'lucas.augusto5061@gmail.com'
+        }
+      }
+    })
   ],
   module: {
     loaders: [{
